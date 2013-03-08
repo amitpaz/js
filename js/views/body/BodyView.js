@@ -10,8 +10,12 @@ define(['jquery', 'dataTables', 'underscore', 'backbone'
 	   	renderSideBar: true,
 	   	toggleSideBar:function (){
 		   	if (this.renderSideBar){
-	   			$("#sidebar",this.$el).hide("slide",{},1000,function(){});
+	   			$("#sidebar",this.$el).hide("slide",{},1000,function(){
+		   			$("#content",this.$el).css("width","100%");
+	   			});
+	   			
 	   		}else{
+	   			$("#content",this.$el).css("width","777px");
 		   		$("#sidebar",this.$el).show("slide",{},1000,function(){});
 	   		}
 	   		this.renderSideBar = !this.renderSideBar;

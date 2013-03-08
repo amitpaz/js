@@ -15,7 +15,7 @@ define([
       },
       
       url: function (){
-			return "http://localhost:8080/api/resources";
+			return "http://localhost:8090/sources/resources.txt";
 	  }
             
      
