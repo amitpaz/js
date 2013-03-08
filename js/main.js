@@ -8,6 +8,9 @@ require.config({
 		backbone: 'libs/backbone',
 		dataTables: 'libs/jquery.dataTables',
 		jqueryUI: 'libs/jquery-ui',
+		bPopup: 'libs/jquery.bpopup.min',
+		_bForm: 'libs/backbone-forms',
+		bbForm: 'libs/backbone-form-bootstrap',
 		templates: '../templates'
 	},
 	shim: {
@@ -26,6 +29,16 @@ require.config({
     },
     jqueryUI:{
 	    deps: ['jquery']
+    },
+    bPopup:{
+	    deps: ['jquery']
+    },
+    _bForm:{
+	    deps: ['backbone']
+    }
+    ,
+    bbForm:{
+	    deps:['_bForm']
     }
   }
 	

@@ -1,5 +1,5 @@
-define([ 'jquery', 'underscore', 'backbone', 'views/body/BodyView'],
-function($	 	 , _		   , Backbone  , BodyView){
+define([ 'jquery', 'underscore', 'backbone', 'views/body/BodyView','views/resource/ResourceAddView'],
+function($	 	 , _		   , Backbone  , BodyView, ResourceAddView){
 		var AppRouter = Backbone.Router.extend({
 			routes: {
 				//default

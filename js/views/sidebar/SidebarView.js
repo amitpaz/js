@@ -5,7 +5,7 @@ define(['jquery', 'dataTables', 'underscore', 'backbone', 'jqueryUI']
 	   		var that = this;
 		   	if (this.model != undefined ){
 			   	this.model.on("change:selection",function (msg ){
-				   	that.resource = msg;
+				   	that.resources = msg;
 				   	that.render();
 			   	});
 			   	
@@ -15,8 +15,12 @@ define(['jquery', 'dataTables', 'underscore', 'backbone', 'jqueryUI']
 	   	render: function(){
 	   		this.$el = $("#sidebar");
 	   		var c;
-	   		if (this.resource != undefined){
-		   		c = "<p>Id:"+this.resource.attributes["@id"]+"</p>"
+	   		if (this.resources != undefined){
+	   			c = "<p>";
+	   			$(this.resources).each(function(index,value){
+		   			c += "Id:" + value.attributes["@id"];
+	   			});
+		   		c += "</p>";
 	   		}else{
 		   		c = "<p>No Information</p>";
 	   		}

@@ -218,4 +218,13 @@ table.dataTable thead td:active {
 	*margin-top: -1px;
 	-webkit-overflow-scrolling: touch;
 }
+.highlighted{
+	background-color:#f9ffc8;
+}
+table.datatable tr.even.row_selected td {
+	background-color: #B0BED9;
+}
 
+table.datatable tr.odd.row_selected td {
+	background-color: #9FAFD1;
+}
