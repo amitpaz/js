@@ -8,11 +8,19 @@ define(['jquery', 'dataTables', 'underscore', 'backbone', 'models/resource/Resou
 	   var ResourceAddView = Backbone.View.extend({
 	   	el: $("#content"),
 	   	resource: new ResourceModel(),
+	   	form: null,
+	   	commit: function (){
+		  if (this.form != null
+		   && typeof this.form.commit == "function"){
+			this.form.commit();   
+		   } 	
+	   	},
 	   	render: function(){
-	   	var form = new Backbone.Form({
-	        model: this.resource
-	    }).render();
-	    	this.$el.html(form.el);
+	   		var that = this;
+		   	that.form = new Backbone.Form({
+		        model: this.resource
+		    }).render();
+	    	this.$el.html(that.form.el);
 	   	}
 	   });
 	   return ResourceAddView;

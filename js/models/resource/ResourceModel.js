@@ -10,7 +10,10 @@ define([
 			severity:  { type: 'Select', options: ['HIGH', 'MED', 'LOW'] }	
 		},
 		url: function (){
-			return "sources/object.txt"
+			return "http://localhost:8080/api/resources"
+		},
+		toJSON: function(){
+			return {resource: this.attributes};
 		}
 	});
 	

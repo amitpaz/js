@@ -5,6 +5,7 @@ define(['jquery', 'underscore', 'backbone', 'text!templates/resourceListView/res
 	   	el: $("#main"),
 	   	aSelected: [],
 	   	popupDOM: null,
+	   	resourceAddView: null,
 	   	initialize: function(){
 	   		var that = this;
 	   		this.model.bind("reset add change remove",function (){
@@ -28,8 +29,14 @@ define(['jquery', 'underscore', 'backbone', 'text!templates/resourceListView/res
 			 });
 
 	   		$(".add",this.$el).click(function(){
-	   			var resourceAdd = new ResourceAddView({el: that.popupDOM});
-	   			resourceAdd.render();
+	   			that.resourceAddView = new ResourceAddView({el: that.popupDOM});
+	   			that.resourceAddView.render();
+	   			that.popupDOM.append("<input type=\"submit\" name=\"addSubmit\" value=\"Save\"/>");
+		    	$("[name=addSubmit]",that.popupDOM).click(function (){
+		    		that.resourceAddView.commit();
+			    	that.resourceAddView.resource.save();
+			    	that.popupDOM.dialog('close');
+		    	});
 	   			that.popupDOM.dialog('open');
 	   		});
 	   		

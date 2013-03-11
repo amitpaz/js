@@ -118,8 +118,8 @@ ul h4 {
 }
 
 #content {
-	/*width: 665px;*/
-	float: right;
+	width: 665px;
+	float: left;
 	padding: 0;
 }
 
@@ -313,7 +313,7 @@ ul h4 {
 #sidebar {
 	width: 100px;
 	padding: 0;
-	float: left;
+	margin: 0 0 0 690px;
 }
 
 #splash {
